@@ -9,6 +9,7 @@
 <body>
 
  <a href="index.php">Página inicial</a>
+ <a href="produtos.php">Página contato</a>
       <?php
              echo"<h1>Página de contato do site</h1> ";
       ?>
