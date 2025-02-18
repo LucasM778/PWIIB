@@ -6,7 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto PWII B</title>
    <link rel="stylesheet" href="bootstrap.min.css">
-   
+   <style>]
+   /*  Deixar as bordas do bootstrap visiveis 
+    .row{
+      border: 2px solid red;
+      padding : 5px;
+    }
+    .row > div {
+      border: 2px solid yellow;
+      padding : 50px 0;
+      text-align: center;
+
+    }
+
+   </style>
+   */
     
 </head>
 <body>
@@ -47,6 +61,26 @@
     </div>
   </div>
 </nav>
+
+/* Bootstrap */
+
+<div class ="row">
+  <div class = "col-3">
+  <button type="button" class="btn btn-info">Cadastrar</button>
+  </div>
+
+  <div class = "col-3">
+  <button type="button" class="btn btn-outline-secondary">Pesquisar</button>
+  </div>
+  
+  <div class = " offset-3 col-3">
+  <button type="button" class="btn btn-warning">Procurar</button>
+  </div>
+
+</div>
+
+
+/*fim do bootstrap*/
 
 
 <table class="table">
