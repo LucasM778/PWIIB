@@ -42,7 +42,7 @@
 
 </nav>
 
-<h1>Página do Index</h1>
+<h1>Página do Array</h1>
 <script src="bootstrap.bundle.min.js"></script>
 
 
