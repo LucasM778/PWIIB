@@ -146,9 +146,9 @@ Exemplo de declaração de constante:
   $venda2 = 15.30;
   $venda3 = 8.80;
  
-  echo "$prod1 quant: ", $quant11, "preço:", $venda1; 
-  echo "$prod2 quant: ",  $quant22, "preço", $venda2; 
-  echo "$prod3 quant: ",  $quant33, "preço", $venda3;
+  echo "$prod1 quant: " , $quant11, " preço: " , $venda1 ; 
+  echo "$prod2 quant: " ,  $quant22, " preço: " , $venda2; 
+  echo "$prod3 quant: " ,  $quant33, " preço: " , $venda3;
 ?><br>
 
 
