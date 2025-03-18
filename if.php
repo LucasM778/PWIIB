@@ -33,6 +33,8 @@
             <li><a class="dropdown-item" href="for.php">For</a></li>
             <li><a class="dropdown-item" href="switch.php">Switch</a></li>
             <li><a class="dropdown-item" href="array.php">Array/Vetor</a></li>
+            <li><a class="dropdown-item" href="formulario.php">formulario</a></li>
+            <li><a class="dropdown-item" href="formulario_exercicio.php">formulario</a></li>
           </ul>
        
       </ul>

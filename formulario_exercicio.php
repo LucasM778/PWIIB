@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto PWII B</title>
-   <link rel="stylesheet" href="bootstrap.min.css">
-
-    
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Formulario</title>
 </head>
 <body>
 
@@ -44,9 +42,22 @@
 
 </nav>
 
-<h1>Página do Index</h1>
-<script src="bootstrap.bundle.min.js"></script>
+<h1>Cadastro</h1>
+
+<form action="salva_exerci.php" method="get"></form>
+
+<label for="Nome"></label>
+<input type="text" name= nome values=""/>
+<br>
+<label for="Email"></label>
+<input type="email" name= email values=""/>
 
 
+<button type="submit">
+    Enviar
+</button>
+
+
+<script src="bootstrap.bundle.min.js"></script> 
 </body>
 </html>
