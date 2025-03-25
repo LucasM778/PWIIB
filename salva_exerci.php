@@ -26,15 +26,31 @@
  
 
 <?php
+ $usu = "Lucas2";
+ $sen = "abc123";
  
- if( $_GET["Usuario"] == $usu){
+
+
+ if( $_POST["Usuario"] == $usu){
 
     echo "Usuario aceito";
   }
   else
   {
     echo "Usuario incorreto";
+    
   }
 
+  echo "<br/>";
+
+
+  if( $_POST["Senha"] == $sen){
+
+    echo "Senha aceita";
+  }
+  else
+  {
+    echo "Senha incorreto";
+  }
 
 ?>

@@ -57,6 +57,9 @@
 </button>
 <br><br><br>
 
+
+
+
 <h2>Exercicio 2</h2>
 
 <form action="salva_exerci.php" method="get">
@@ -70,8 +73,11 @@
  <button type="submit">
     Enviar
 </button>
-</form>
+</form></div>
 <br><br><br>
+
+
+
 
 <h2>Exercicio 3</h2>
 
@@ -88,12 +94,6 @@
 
 
 <h2>Exercicio 4</h2> 
-
-<?php
-  $usu = Lucas2;
-  $sen = abc123;
- 
- ?>
 
 <form action="salva_exerci.php" method="post">
 
