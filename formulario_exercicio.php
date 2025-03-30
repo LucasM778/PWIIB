@@ -9,6 +9,17 @@
 </head>
 <body>
 
+
+<style>
+  .Exercicio1{
+    background-color: gray;
+    padding: 20px;
+    text-align:center;
+    font-size:arial;
+
+
+  }
+</style>
 <nav class="navbar navbar-expand-lg bg-dark " data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"> 
@@ -32,7 +43,8 @@
             <li><a class="dropdown-item" href="switch.php">Switch</a></li>
             <li><a class="dropdown-item" href="array.php">Array/Vetor</a></li>
             <li><a class="dropdown-item" href="formulario.php">formulario</a></li>
-            <li><a class="dropdown-item" href="formulario_exercicio.php">formulario</a></li>
+            <li><a class="dropdown-item" href="index.php">Index</a></li>
+            <li><a class="dropdown-item" href="formulario_exercicio.php">formulario Exercicios</a></li>
           </ul>
        
       </ul>
@@ -41,7 +53,7 @@
   </div>
 
 </nav>
-
+<div class= "Exercicio1" >
 <h1>Cadastro</h1>
 <h2>Exercicio 1</h2>
 <form action="salva_exerci.php" method= "get">
@@ -73,7 +85,7 @@
  <button type="submit">
     Enviar
 </button>
-</form></div>
+</form>
 <br><br><br>
 
 
@@ -108,7 +120,7 @@
     Enviar
 </button>
 </form>
-
+</div>
 
 
 <script src="bootstrap.bundle.min.js"></script> 

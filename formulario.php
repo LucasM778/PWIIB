@@ -32,7 +32,8 @@
             <li><a class="dropdown-item" href="switch.php">Switch</a></li>
             <li><a class="dropdown-item" href="array.php">Array/Vetor</a></li>
             <li><a class="dropdown-item" href="formulario.php">formulario</a></li>
-            <li><a class="dropdown-item" href="formulario_exercicio.php">formulario</a></li>
+            <li><a class="dropdown-item" href="index.php">Index</a></li>
+            <li><a class="dropdown-item" href="formulario_exercicio.php">formulario Exercicios</a></li>
           </ul>
        
       </ul>

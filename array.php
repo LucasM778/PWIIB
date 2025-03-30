@@ -34,7 +34,8 @@
             <li><a class="dropdown-item" href="switch.php">Switch</a></li>
             <li><a class="dropdown-item" href="array.php">Array/Vetor</a></li>
             <li><a class="dropdown-item" href="formulario.php">formulario</a></li>
-            <li><a class="dropdown-item" href="formulario_exercicio.php">formulario</a></li>
+            <li><a class="dropdown-item" href="index.php">Index</a></li>
+            <li><a class="dropdown-item" href="formulario_exercicio.php">formulario Exercicios</a></li>
           </ul>
        
       </ul>
@@ -43,6 +44,7 @@
   </div>
 
 </nav>
+
 
 <h1>Página do Array</h1>
 <P>
@@ -104,37 +106,7 @@
    </style>
  
  
- <table border="5">
-     <tr>
-       <td>B</td>
-       <td>I</td>
-       <td>N</td>
-       <td>G</td>
-       <td>O</td>
-     </tr>
-     <?php
-       for($ifor=0; $ifor < 5; $ifor++)
-       {
-         echo "<tr>";
-         echo "<td>$b[$ifor]</td>";  
-         echo "<td>$i[$ifor]</td>";
-         echo "<td>$n[$ifor]</td>";
-         echo "<td>$g[$ifor]</td>";
-         echo "<td>$o[$ifor]</td>";
-         echo "</tr>";
-       }
-     ?>
- 
- </table>
-  <h1>Sorteio</h1>
- <?php
-  $Sorteio = array(12,7,3,9,5,2,4,1,11,8,13,6,14,15,10);
-  
-  for($i = 0; $i < 15; $i++)
-  {
-    echo "<h2>Rodada ".($i+1)."número sorteado é : $Sorteio[$i]<h2>";
-  }
- ?>
+
  
  
 
