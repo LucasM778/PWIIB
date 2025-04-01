@@ -45,6 +45,7 @@
             <li><a class="dropdown-item" href="formulario.php">formulario</a></li>
             <li><a class="dropdown-item" href="index.php">Index</a></li>
             <li><a class="dropdown-item" href="formulario_exercicio.php">formulario Exercicios</a></li>
+            <li><a class="dropdown-item" href="login.php">Login</a></li>
           </ul>
        
       </ul>

@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css">
-    <title>Formulario</title>
+    <title>Login</title>
 </head>
 <body>
+
+<style>
+.form{
+
+}
+
+</style>
 
 <nav class="navbar navbar-expand-lg bg-dark " data-bs-theme="dark">
   <div class="container-fluid">
@@ -33,8 +40,8 @@
             <li><a class="dropdown-item" href="array.php">Array/Vetor</a></li>
             <li><a class="dropdown-item" href="formulario.php">formulario</a></li>
             <li><a class="dropdown-item" href="index.php">Index</a></li>
-            <li><a class="dropdown-item" href="formulario_exercicio.php">formulario Exercicios</a></li>
             <li><a class="dropdown-item" href="login.php">Login</a></li>
+            <li><a class="dropdown-item" href="formulario_exercicio.php">formulario Exercicios</a></li>
           </ul>
        
       </ul>
@@ -43,20 +50,33 @@
   </div>
 
 </nav>
+    <div class = "form">
+<form action="verifica_login.php" method="post">
 
-<h1>Cádastro de Usúario</h1>
-
-<form action="salvar_dados.php" method= "post">
-
-<label>Email</label>
-<input type="email" name="login" value=""/>
+<br>Email:
+<input type="text" class="form-control" name="email" />
+<br>Senha:
+<input type="password" class="form-control" name="senha" />
 <br>
-<label >Senha</label>
-<input type="password" name="senha" value=""/>
-<br>
-<button type="submit">
-    Logar
+
+<?php
+     if(isset($_GET["erro"]) && !empty($_GET["erro"])){
+ 
+        echo $_GET["erro"];
+     }
+?>
+<br><br>
+<button type= "submit">
+Logar
+
 </button>
+
+</div>
+
+
+
+
+
 
 
 
@@ -64,6 +84,6 @@
 
 
 
-<script src="bootstrap.bundle.min.js"></script>    
+<script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>

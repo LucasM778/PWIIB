@@ -14,20 +14,20 @@ if (isset($_GET['nome'])) {
 
 
 <?php
-  if (isset($_GET['1_numero'])) {
+  if (isset($_GET["1_numero"])== true && empty($_GET["1_numero"])== false) {
   $um = $_GET["1_numero"];
   
   $dois = $_GET["2_numero"];
-  $res = $um + $dois;
- echo  $res; }
+  echo  $um + $dois;
+  }
 
  echo"<br/><br/>";
 ?>
 
 
 <?php
-if (isset($_GET['Nome1'])) {
-  $nom1 = $_GET['Nome1'];
+if (isset($_GET["Nome1"])) {
+  $nom1 = $_GET["Nome1"];
 
     echo "Olá $nom1";
 }
@@ -41,7 +41,7 @@ if (isset($_GET['Nome1'])) {
  $sen = "abc123";
  
 
- if (isset($_POST['Usuario'])) {
+ if (isset($_POST["Usuario"])) {
  if( $_POST["Usuario"] == $usu){
 
     echo "Usuario aceito";
