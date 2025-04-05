@@ -10,7 +10,9 @@
 <body>
 
 <style>
-.form{
+.a{
+
+
 
 }
 
@@ -49,28 +51,44 @@
     </div>
   </div>
 
-</nav>
-    <div class = "form">
-<form action="verifica_login.php" method="post">
+</nav>  
+   <div class="container text-center" data-bs-theme="blue">
+    
+   
+    <img src="\PWIIB\imagens\def.jpg" class ="rounded mx-auto d-block" alt="logo"  width="100%" height="408>
+      
+    </div>
+    <div class = "col-4 offset-4" >
+      <form action="verifica_login.php" method="post">
+        <br>
+        <div class = "form-floating ">
+          <input type="text" class="form-control" id="login" name="login" placeholder="Digite seu login"/>
+          <label for="login">Digite seu login</label> 
+        </div>
+          <br>
+          <div class = "form-floating ">
+            <input type="password" class="form-control" id ="senha" name="senha" placeholder="Digite sua senha"/>
+            <label for="login"> Digite sua senha</label>
+          </div>
+            <br>
+       
 
-<br>Email:
-<input type="text" class="form-control" name="email" />
-<br>Senha:
-<input type="password" class="form-control" name="senha" />
-<br>
-
-<?php
-     if(isset($_GET["erro"]) && !empty($_GET["erro"])){
+      <?php
+        if(isset($_GET["erro"]) && !empty($_GET["erro"])){
  
-        echo $_GET["erro"];
-     }
-?>
-<br><br>
-<button type= "submit">
-Logar
+            echo $_GET["erro"];
+        }
+        ?>
+        <br><br>
+        <div class="d-grid gap-2">
+        <button type= "submit" class="btn btn-outline-danger">
+       
+           
+          Entrar
 
-</button>
-
+        </button>
+      </div>
+      </div>
 </div>
 
 

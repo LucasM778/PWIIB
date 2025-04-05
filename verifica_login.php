@@ -1,11 +1,11 @@
 <?php
 
-if(isset($_POST["email"])== true && empty($_POST["email"])== false){
+if(isset($_POST["login"])== true && empty($_POST["login"])== false){
 
-    echo "O email é:".$_POST["email"];
+    echo "O usuario é:".$_POST["login"];
 }else
 {
-    echo "Email não existe";
+    echo "Usuario não existe";
 
 
 }
