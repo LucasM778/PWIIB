@@ -51,14 +51,15 @@
     </div>
   </div>
 
-</nav>  
-   <div class="container text-center" data-bs-theme="blue">
+</nav>   
+    <div class= "pt-4 pb-4">
+   <div class=" col-4 offset-4 container text-center bg-primary rounded  "  >
     
+
+    <img src="\PWIIB\imagens\def.jpg"  class ="rounded  col-8 py-1 w-100" alt="logo"  >
+ 
+  
    
-    <img src="\PWIIB\imagens\def.jpg" class ="rounded mx-auto d-block" alt="logo"  width="100%" height="408>
-      
-    </div>
-    <div class = "col-4 offset-4" >
       <form action="verifica_login.php" method="post">
         <br>
         <div class = "form-floating ">
@@ -69,9 +70,9 @@
           <div class = "form-floating ">
             <input type="password" class="form-control" id ="senha" name="senha" placeholder="Digite sua senha"/>
             <label for="login"> Digite sua senha</label>
-          </div>
+   
             <br>
-       
+    
 
       <?php
         if(isset($_GET["erro"]) && !empty($_GET["erro"])){
@@ -79,14 +80,16 @@
             echo $_GET["erro"];
         }
         ?>
-        <br><br>
-        <div class="d-grid gap-2">
-        <button type= "submit" class="btn btn-outline-danger">
+        <br>
+        <div class="d-grid gap-2 p-2">
+        <button type= "submit" class="btn btn-danger">
        
            
           Entrar
 
         </button>
+        </div>
+        </div>
       </div>
       </div>
 </div>

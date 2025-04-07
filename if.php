@@ -63,7 +63,7 @@
   {
     echo "Aqui siguinifica $numero diferente de 1";
   </pre>
-
+  }
 <?php
   $numero = 2;
   if($numero == 1){
