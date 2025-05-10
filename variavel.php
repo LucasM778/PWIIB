@@ -1,15 +1,9 @@
-<?php include "cabecalho.php" ?>
-
-
+<?php include "cabecalho.php"; ?>
 <div class="container">
-  <h1>Página da Variavél</h1>
-  <h3>Declaração de Variavel</h3>
-
-
+  <h1>Variável</h1>
+  <h3>Declaração de Variáveis</h3>
   <p>
-  A declaração de variáveis em PHP é feita utilizando o símbolo de cifrão ($) antes do nome da variável. O nome da variável deve começar com uma letra ou um underscore (_),
-   seguido por letras, números ou underscores. As variáveis em PHP são dinâmicas, ou seja, não é necessário declarar o tipo da variável antes de usá-la. 
-   O valor da variável pode ser alterado ao longo da execução do código.
+  A declaração de variáveis em PHP é feita utilizando o símbolo de cifrão ($) antes do nome da variável. O nome da variável deve começar com uma letra ou um underscore (_), seguido por letras, números ou underscores. As variáveis em PHP são dinâmicas, ou seja, não é necessário declarar o tipo da variável antes de usá-la. O valor da variável pode ser alterado ao longo da execução do código.
   </p>
   Exemplo de declaração de variável:
  
@@ -18,26 +12,35 @@
       $nome = "João";  // variável do tipo string
       $idade = 25;     // variável do tipo inteiro
       $altura = 1.75;   // variável do tipo float
-      
   </pre>
 
+  <?php 
 
+   
 
-<?php
- $nome = "Lucas";
- $idade = 26;
- $peso = 71.80;
- $altura = 1.70;
- $isAluno = true;
-?>
- 
- <h1>Constantes</h1>
+    $nome = "Fernando";
+    $idade = 34;
+    $peso = 79.500;
+    $altura = 1.77;
+    $isProf = true;
+
+    $namorada = false;
+    $salario = 5000.50;
+
+    echo "<h5>$salario</h5>";
+
+    $numeroTenis = "39";
+
+    echo "$idade +  $peso";
+    
+
+  ?>
+
+<h1>Constantes</h1>
 <p>
-Em PHP, constantes são valores fixos que não podem ser alterados durante a execução do programa. 
-Elas são declaradas com a palavra-chave define() ou usando a palavra-chave const (para constantes definidas em classes ou escopos específicos).
+Em PHP, constantes são valores fixos que não podem ser alterados durante a execução do programa. Elas são declaradas com a palavra-chave define() ou usando a palavra-chave const (para constantes definidas em classes ou escopos específicos).
 
-A principal diferença entre constantes e variáveis é que, enquanto as variáveis podem ter seu valor alterado, as constantes mantêm o mesmo valor durante todo o script.
- Constantes podem ser usadas em qualquer lugar do código e não precisam do símbolo de cifrão ($).
+A principal diferença entre constantes e variáveis é que, enquanto as variáveis podem ter seu valor alterado, as constantes mantêm o mesmo valor durante todo o script. Constantes podem ser usadas em qualquer lugar do código e não precisam do símbolo de cifrão ($).
 
 <br />
 Exemplo de declaração de constante:
@@ -60,8 +63,9 @@ Exemplo de declaração de constante:
   const coordenador = "Faberson";
   echo "<br>";
   echo coordenador;
-  
+
 ?>
+
 
 <h1>Exercícios</h1>
 
@@ -78,45 +82,6 @@ Exemplo de declaração de constante:
 </ol>
 
 
- <p> Exercicios 1 : Variaveis $num1 = 5 $num2 = 6 $num3 = 3 , resultado:</p>
-<?php
-  $num1 = 5;
-  $num2 = 6;
-  $num3 = 3;
-  echo $num1 + $num2 + $num3;
-?><br>
+</div> <!-- Fecha container bootstrap -->
 
-<p> Exercicios 2 : Variaveis $num1 = 5 $num2 = 6  , resultado:</p>
-<?php
-  $num1 = 5;
-  $num2 = 6;
-
-  echo $num1 * $num2 ;
-?><br>
-
-<p> Exercicios 3 : Variaveis ,$prod1 = "arroz" $prod2 = "feijão" $prod3 = "macarrão" resultado:</p>
-<?php
-  $prod1 = "arroz";
-  $prod2 = "feijão";
-  $prod3 = "macarrão";
-  $quant11 = 2;
-  $quant22 = 5;
-  $quant33 = 4;
-  $venda1 = 20.50;
-  $venda2 = 15.30;
-  $venda3 = 8.80;
- 
-  echo "$prod1 quant: " , $quant11, " preço: " , $venda1 ; 
-  echo "$prod2 quant: " ,  $quant22, " preço: " , $venda2; 
-  echo "$prod3 quant: " ,  $quant33, " preço: " , $venda3;
-?><br>
-
-
-  
-
-</div> <! -- Fecha container bootstrap -->
-
-
-
-
-<?php include "rodape.php" ?>
+<?php include "rodape.php"; ?>

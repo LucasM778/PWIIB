@@ -1,59 +1,33 @@
-<?php include "cabecalho.php" ?>
+<?php include "cabecalho.php"; ?>
 
+<div class="container">
 
-</style>
-  
-    <div class= "pt-4 pb-4">
-   <div class=" col-4 offset-4 container text-center bg-primary rounded  "  >
-    
+<div class="row">
+    <div class="col-md-6 offset-md-3">
 
-    <img src="\PWIIB\imagens\def.jpg"  class ="rounded  col-8 py-1 w-100" alt="logo"  >
- 
-  
-   
-      <form action="verifica_login.php" method="post">
-        <br>
-        <div class = "form-floating ">
-          <input type="text" class="form-control " id="login" name="login" placeholder="Digite seu login"/>
-          <label for="login">Digite seu login</label> 
+        <div class="card mt-3 ">
+
+            <form class="card-body cardbody-color rounded-3 p-lg-5" method="post" action="/Login/Entrar/">
+
+                <div class="text-center">
+                    <img src="/pwiib/imagens/login.png" class="img-fluid my-4 bg-white p-3 rounded-3" alt="profile">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="text" class="form-control" name="Login" id="Login" required aria-describedby="Login" placeholder="Digite seu login">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="password" class="form-control" id="Senha" name="Senha" required placeholder="Digite sua senha">
+                </div>
+                <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100" style="background-color:#F7A81B">Entrar</button></div>
+                <input type="hidden" name="ReturnUrl" value="/" />
+                <div id="mensagem" class="form-text text-center mb-5 text-dark">
+                    
+                </div>
+            </form>
         </div>
-          <br>
-          <div class = "form-floating ">
-            <input type="password" class="form-control" id ="senha" name="senha" placeholder="Digite sua senha"/>
-            <label for="login"> Digite sua senha</label>
-   
-            <br>
-    
 
-      <?php
-        if(isset($_GET["erro"]) && !empty($_GET["erro"])){
- 
-            echo $_GET["erro"];
-        }
-        ?>
-        <br>
-        <div class="d-grid gap-2 p-2">
-        <button type= "submit" class="btn btn-danger">
-       
-           
-          Entrar
-
-        </button>
-        </div>
-        </div>
-      </div>
-      </div>
+    </div>
+</div>
 </div>
 
-
-
-
-
-
-
-
-</form>
-
-
-
-<?php include "rodape.php" ?>
+<?php include "rodape.php"; ?>

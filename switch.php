@@ -1,6 +1,4 @@
-<?php include "cabecalho.php" ?>
+<?php include "cabecalho.php"; ?>
 
-<h1>Página do Switch</h1>
-
-
-<?php include "rodape.php" ?>
+<h1>Switch</h1>
+<?php include "rodape.php"; ?>
