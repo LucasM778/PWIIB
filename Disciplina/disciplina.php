@@ -1,45 +1,55 @@
 <?php
-    include "cabecalho.php"; 
-    include "conexao.php";
+ include "cabecalho.php"; 
+ include "conexao.php";
 
-    //Inclui o arquivo da classe Repository do usuário
-    require_once 'UsuarioRepository.php';
+include "conexao.php";
+require_once "disciplinaRepository.php";
+$repo = new disciplinaRepository($conexao);
 
-    //Crio um objeto do tipo UsuarioRepository chamado repo
-    //E recebe a conexão como parametro
-    $repo = new UsuarioRepository($conexao);
+//Inclui o arquivo da classe Repository do usuário
+require_once 'disciplinaRepository.php';
 
-
-    if(isset($_GET['busca']) && !empty($_GET['busca']))
-    {
-
-        $usuarios = $repo->Pesquisar($_GET['busca']);
-    }
-    else
-    {
-            //Chamei o metodo BuscarTodos para puxar 
-            // todos usuarios do banco de dados
-            $usuarios = $repo->buscarTodos();
-
-    }
+//Crio um objeto do tipo UsuarioRepository chamado repo
+//E recebe a conexão como parametro
+$repo = new disciplinaRepository($conexao);
 
 
-    
+if(isset($_GET['busca']) && !empty($_GET['busca']))
+{
 
+    $disciplina = $repo->Pesquisar($_GET['busca']);
+}
+else
+{
+        //Chamei o metodo BuscarTodos para puxar 
+        // todos usuarios do banco de dados
+        $disciplina = $repo->buscarTodos();
+
+}
+
+
+
+
+
+
+
+
+
+include "rodape.php"; 
 ?>
 <div class="row">
     <div class="col-12">
         <br />
         <div class="card">
             <div class="card-header">
-                <b>Lista de usuários</b>
+                <b>Lista Disciplina</b>
             </div>
             <div class="card-body">
-                <form action="Usuarios.php" method ="get">
+                <form action="Disciplina.php" method ="get">
               <div class="row">
                     <div class="col-4">
-                        <a href="novo_usuario.php" class="btn btn-success">
-                            Novo usuário
+                        <a href="disciplina.php" class="btn btn-success">
+                            Nova Disciplina
                         </a>
                     </div>
                     <div class="col-4">
@@ -57,7 +67,7 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Login</th>
+                            <th>Nome</th>
                             <th>Ativo</th>
                             <th></th>
                         </tr>
@@ -66,16 +76,16 @@
                         <?php
                             //foreach serve para ler todos os usuarios 
                             // vindos do banco em formato de array chave valor
-                            foreach ($usuarios as $user) {
+                            foreach ($nome as $disc) {
                                 echo "<tr>
-                                        <td>".$user['ID']."</td>
-                                        <td>".$user['LOGIN']."</td>
-                                        <td>".$user['ATIVO']."</td>
+                                        <td>".$disc['NOME']."</td>
+                                        <td>".$disc['LOGIN']."</td>
+                                        <td>".$disc['ATIVO']."</td>
                                         <td>
                                             <a class='btn btn-danger'
-                                                 href='excluir_usuario.php?id=".$user['ID']."'>Excluir</a>
+                                                 href='excluir_usuario.php?id=".$disc['ID']."'>Excluir</a>
                                             <a class='btn btn-warning'
-                                                 href='editar_usuario.php?id=".$user['ID']."'>Editar</a>
+                                                 href='editar_usuario.php?id=".$disc['ID']."'>Editar</a>
                                         </td> 
                                       </tr>";
                             }

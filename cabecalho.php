@@ -60,6 +60,8 @@
             <li><a class="dropdown-item" href="for.php">For</a></li>
             <li><a class="dropdown-item" href="switch.php">Switch</a></li>
             <li><a class="dropdown-item" href="array.php">Array/Vetor</a></li>
+            <li><a class="dropdown-item" href="disciplina.php">Disciplina</a></li>
+          
           </ul>
         </li><!--Fim do menu dropdonw -->
         <li class="nav-item">
