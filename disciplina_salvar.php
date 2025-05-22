@@ -5,15 +5,15 @@ require_once "disciplinaRepository.php";
 $repo = new disciplinaRepository($conexao);
 
 
-if( isset($_POST["salvar_disciplina"]) )
+if( isset($_POST["disciplina_salvar"]) )
 {
     $ativo = isset( $_POST['ativo'] ) ? $_POST['ativo'] : false ;
-    $repo->Inserir($_POST['NOME'],$_POST['senha'],$ativo);
-    header('location: disciplina.php');
+    $repo->Inserir($_POST['nome'],$ativo);
+    header('location: disciplinas.php');
 }
 else
 {
-    header('location: disciplina.php');
+    header('location: disiciplinas.php');
 
 }
 

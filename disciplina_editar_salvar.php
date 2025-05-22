@@ -9,11 +9,11 @@ if( isset($_POST["ID"]) && isset($_POST['NOME']) )
 {
    
     $repo->Editar($_POST['NOME'],$_POST['ID'],$_POST['ATIVO']);
-    header('location: disciplina.php');
+    header('location: disciplinas.php');
 }
 else
 {
-    header('location: disciplina.php');
+    header('location: disciplinas.php');
 
 }
 

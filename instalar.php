@@ -42,9 +42,16 @@ $conexao->query($sql); $sql=
     ID_REF INT,
     CONSTRAINT FK_PERGUNTA FOREIGN KEY (ID_PERGUNTA) REFERENCES PERGUNTAS(ID),
     CONSTRAINT FK_REF FOREIGN KEY (ID_REF) REFERENCES REFERENCIAS(ID)
-);";
+);"
+///////TAREFA 22/05///////
+$sql = "CREATE TABLE IF NOT EXISTS DISCIPLINASUM (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    NOME VARCHAR(50) NOT NULL,
+    ATIVO BIT DEFAULT 1
+);"
+;
 
-
+//////FIM DA TAREFA //////
 
 if ($conexao->query($sql)) {
     echo "Tabela criada com sucesso.<br>";
@@ -70,6 +77,11 @@ $sql_insert = "INSERT INTO USUARIOS (LOGIN, SENHA) VALUES
     ('VITORIA FERNANDA FERRARI DA SILVA', '123senha'),
     ('YURI RAFAEL DA SILVA SANTO', '123senha')
     ;";
+
+    ///////TAREFA 22/05///////
+$sql_insert = "INSERT INTO DISCIPLINASUM (NOME) VALUES
+    ('PWII'),('BANCO DE DADOS'),('PTCC');"; 
+//////FIM DA TAREFA //////
 
 
 // Executando a inserção

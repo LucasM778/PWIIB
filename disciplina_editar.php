@@ -11,7 +11,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 }
 else
 {
-    header('lacation: disciplina.php');
+    header('lacation: disciplinas.php');
 }
 
 ?>
@@ -20,7 +20,7 @@ else
         <div class="card">
             <div class="card-header">Editar Disciplina</div>
             <div class="card-body">
-                <form action="salvar_edicao_usuario.php" method="post">
+                <form action="disciplina_editar_salvar.php" method="post">
                     <label>Id</label>
                     <input type="text"
                         value="<?php echo $disciplina['ID'] ?>" class="form-control" name="ID" readonly/>
@@ -28,8 +28,8 @@ else
                     <br/>
 
                     <label>Nome</label>
-                    <input type="text"
-                        value="<?php echo $disciplina['NOME'] ?>" class="form-control" name="NOME" />
+                    <input type="text"disciplina
+                        value="<?php echo $['NOME'] ?>" class="form-control" name="NOME" />
                     <br/>
 
                     <select name="ATIVO" class='form-control'>

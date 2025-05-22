@@ -1,3 +1,4 @@
+<!--- Tarefa 22/05       ---->
 <?php
 class disciplinaRepository {
     private $conexao;
@@ -7,7 +8,7 @@ class disciplinaRepository {
         $this->conexao = $conexao;
     }
 
-    public function buscarTodos() {
+    public function buscarTodas() {
         $result = $this->conexao->query(
             "SELECT * FROM disciplina");
 
@@ -20,11 +21,11 @@ class disciplinaRepository {
 
 
     public function Pesquisar($busca){
-        $sql ="SELECT * FROM disciplina WHERE LOGIN like '%$busca%'";
+        $sql ="SELECT * FROM disciplina WHERE NOME like '%$busca%'";
         $result = $this->conexao->query($sql);
-        $usuarios =[];
+        $disciplina =[];
         while ($row = $result->fetch_assoc()) {
-            array_push($usuarios, $row);
+            array_push($disciplina, $row);
         }
         return $disciplina;
 
@@ -33,19 +34,19 @@ class disciplinaRepository {
    
     public function buscarPorId($id) {
         $stmt = $this->conexao->prepare(
-            "SELECT * FROM disciplina WHERE id = ?");
+            "SELECT * FROM usuarios WHERE id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
 
         $resultado = $stmt->get_result();
         return $resultado->fetch_assoc();
     }
-    public function Inserir($disciplina)
+    public function Inserir($nome)
     {
         echo $ativo;
         
         $sql = "INSERT INTO disciplina (NOME, ATIVO) 
-                VALUES (?, ?);";
+                VALUES (?, ?, ?);";
                 $stmt = $this->conexao->prepare($sql);
                 $stmt->bind_param("si", $nome,$ativo);
                 $stmt->execute();
@@ -57,7 +58,7 @@ class disciplinaRepository {
         
         $sql = "UPDATE disciplina set NOME = ?, ATIVO = ? where ID = ?"; 
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("sii", $login,$ativo,$id);
+                $stmt->bind_param("sii", $nome,$ativo,$id);
                 $stmt->execute();
     }
 
@@ -70,3 +71,4 @@ class disciplinaRepository {
     }
 
 }
+
