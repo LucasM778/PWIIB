@@ -3,7 +3,7 @@
     include "conexao.php";
 
     //Inclui o arquivo da classe Repository do usuário
-    require_once 'disciplinaRepository';
+    require_once 'disciplinaRepository.php';
 
     //Crio um objeto do tipo UsuarioRepository chamado repo
     //E recebe a conexão como parametro
@@ -19,7 +19,7 @@
     {
             //Chamei o metodo BuscarTodos para puxar 
             // todos usuarios do banco de dados
-            $disciplina = $repo->buscarTodas();
+            $disciplinaum = $repo->buscarTodas();
 
     }
 
@@ -66,7 +66,7 @@
                         <?php
                             //foreach serve para ler todos os usuarios 
                             // vindos do banco em formato de array chave valor
-                            foreach ($disciplina as $user) {
+                            foreach ($disciplinasum as $user) {
                                 echo "<tr>
                                         <td>".$user['ID']."</td>
                                         <td>".$user['NOME']."</td>

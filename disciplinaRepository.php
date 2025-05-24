@@ -8,33 +8,36 @@ class disciplinaRepository {
         $this->conexao = $conexao;
     }
 
-    public function buscarTodas() {
-        $result = $this->conexao->query(
-            "SELECT * FROM disciplina");
 
-        $disciplina = [];
+
+    public function buscarTodas() {
+
+        $result = $this->conexao->query(
+            "SELECT * FROM disciplinasum");
+
+        $disciplinaum = [];
         while ($row = $result->fetch_assoc()) {
-            array_push($disciplina, $row);
+            array_push($disciplinaum, $row);
         }
-        return $disciplina;
+        return $disciplinaum;
     }
 
 
     public function Pesquisar($busca){
-        $sql ="SELECT * FROM disciplina WHERE NOME like '%$busca%'";
-        $result = $this->conexao->query($sql);
-        $disciplina =[];
+        $sql ="SELECT * FROM disciplinasum WHERE NOME like '%$busca%'";
+        $resultado = $this->conexao->query($sql);
+        $disciplinaum =[];
         while ($row = $result->fetch_assoc()) {
-            array_push($disciplina, $row);
+            array_push($disciplinaum, $row);
         }
-        return $disciplina;
+        return $disciplinaum;
 
 
     }
    
     public function buscarPorId($id) {
         $stmt = $this->conexao->prepare(
-            "SELECT * FROM usuarios WHERE id = ?");
+            "SELECT * FROM disciplinasum WHERE id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
 
@@ -45,7 +48,7 @@ class disciplinaRepository {
     {
         echo $ativo;
         
-        $sql = "INSERT INTO disciplina (NOME, ATIVO) 
+        $sql = "INSERT INTO disciplinasum (NOME, ATIVO) 
                 VALUES (?, ?, ?);";
                 $stmt = $this->conexao->prepare($sql);
                 $stmt->bind_param("si", $nome,$ativo);
@@ -56,7 +59,7 @@ class disciplinaRepository {
     {
     
         
-        $sql = "UPDATE disciplina set NOME = ?, ATIVO = ? where ID = ?"; 
+        $sql = "UPDATE disciplinasum set NOME = ?, ATIVO = ? where ID = ?"; 
                 $stmt = $this->conexao->prepare($sql);
                 $stmt->bind_param("sii", $nome,$ativo,$id);
                 $stmt->execute();
@@ -64,7 +67,7 @@ class disciplinaRepository {
 
     public function excluirDisciplina($id)
     {
-        $sql = "DELETE FROM disciplina where id = ?";
+        $sql = "DELETE FROM disciplinasum where id = ?";
         $preparar = $this->conexao->prepare($sql);
         $preparar->bind_param("i",$id);
         $preparar->execute();
