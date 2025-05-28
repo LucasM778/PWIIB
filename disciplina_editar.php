@@ -5,8 +5,8 @@ include "cabecalho.php";
 if(isset($_GET['id']) && !empty($_GET['id'])){
 
 
-    $repo = new disciplinaRepository($conexao);
-    $disciplina = $repo->buscarPorId($_GET['id']);
+    $rep = new disciplinaRepository($conexao);
+    $disciplina = $rep->buscarPorId($_GET['id']);
 
 }
 else
@@ -27,9 +27,9 @@ else
 
                     <br/>
 
-                    <label>Nome</label>
+                    <label>Disciplina</label>
                     <input type="text"disciplina
-                        value="<?php echo $['NOME'] ?>" class="form-control" name="NOME" />
+                        value="<?php echo $disciplina['NOME'] ?>" class="form-control" name="NOME" />
                     <br/>
 
                     <select name="ATIVO" class='form-control'>

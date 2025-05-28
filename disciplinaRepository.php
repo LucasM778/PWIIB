@@ -15,11 +15,11 @@ class disciplinaRepository {
         $result = $this->conexao->query(
             "SELECT * FROM disciplinasum");
 
-        $disciplinaum = [];
+        $disciplinasum = [];
         while ($row = $result->fetch_assoc()) {
-            array_push($disciplinaum, $row);
+            array_push($disciplinasum, $row);
         }
-        return $disciplinaum;
+        return $disciplinasum;
     }
 
 
@@ -44,12 +44,12 @@ class disciplinaRepository {
         $resultado = $stmt->get_result();
         return $resultado->fetch_assoc();
     }
-    public function Inserir($nome)
+    public function Inserir($nome, $ativo)
     {
         echo $ativo;
         
         $sql = "INSERT INTO disciplinasum (NOME, ATIVO) 
-                VALUES (?, ?, ?);";
+                VALUES (?, ?);";
                 $stmt = $this->conexao->prepare($sql);
                 $stmt->bind_param("si", $nome,$ativo);
                 $stmt->execute();

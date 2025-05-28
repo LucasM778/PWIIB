@@ -5,8 +5,8 @@ $repo = new disciplinaRepository($conexao);
 
 if( isset($_GET["id"]) && !empty($_GET["id"]) )
 {
-    $discipina = $repo->buscarPorId($_GET["id"]);
-    if($discipina != null)
+    $disciplinasum = $repo->buscarPorId($_GET["id"]);
+    if($disciplinasum != null)
     {
         $repo->excluirDisciplina($_GET["id"]);
     }
