@@ -82,6 +82,12 @@
             </a>
         </li>
 
+         <li class="nav-item">
+            <a class="nav-link" href="referencias.php" > 
+              Referencias 
+            </a>
+        </li>
+
       </ul><!--Fim do menu  -->
      
     </div>
