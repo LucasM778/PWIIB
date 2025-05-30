@@ -77,11 +77,17 @@ $sql_insert = "INSERT INTO USUARIOS (LOGIN, SENHA) VALUES
     ('VITORIA FERNANDA FERRARI DA SILVA', '123senha'),
     ('YURI RAFAEL DA SILVA SANTO', '123senha')
     ;";
+    
+    $sql_insert = "INSERT INTO DISCIPLINASUM (NOME) VALUES
+    ('PWII'),('BANCO DE DADOS'),('PTCC'),('AULA');";
+
+   $sql_insert = "INSERT INTO REFERENCIAS (NOME) VALUES 
+   ('MATEMATICA'), ('GEOGRAFIA');";
+      
 
 
   ///////TAREFA 22/05///////
-  $sql_insert = "INSERT INTO DISCIPLINASUM (NOME) VALUES
-  ('PWII'),('BANCO DE DADOS'),('PTCC');"; 
+
 //////FIM DA TAREFA //////
 
 
