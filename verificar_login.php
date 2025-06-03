@@ -1,22 +1,31 @@
-<?php 
-if(   isset($_POST["email"]) && empty($_POST["email"]) == false )
+<?php  session_start();
+if(   isset($_POST["Login"]) && empty($_POST["Login"]) == false )
 {
-    echo "o email é:".$_POST["email"];
+    echo "o Login é:".$_POST["Login"];
 }
-else
+if(   isset($_POST["Senha"]) && empty($_POST["Senha"]) == false )
 {
-    echo "Email não existe";
+    echo "<br>a Senha é:".$_POST["Senha"];
 }
 
-if(   isset($_POST["senha"]) && empty($_POST["senha"]) == false )
+include "conexao.php";
+require_once "UsuarioRepository.php";
+$repo = new UsuarioRepository($conexao);
+
+$usuarioLogado = $repo->verificarLogin($_POST["Login"], $_POST["Senha"]);
+if($usuarioLogado != null)
 {
-    echo "<br>a senha é:".$_POST["senha"];
+    $_SESSION["Nome"] = $usuarioLogado["LOGIN"];
+    $_SESSION["Id"] = $usuarioLogado["ID"];
+    header("location: index.php");
 }
 else
 {
     header('location: login.php?erro=Senha não pode estar em branco');
+    header("location: login.php?erro=Usuario e/ou senha inválido");
 }
 
 
 
 ?>
+<h1>Verificando login</h1>

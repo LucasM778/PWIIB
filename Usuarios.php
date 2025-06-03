@@ -1,4 +1,5 @@
 <?php
+
     include "cabecalho.php"; 
     include "conexao.php";
 
@@ -14,6 +15,7 @@
     {
 
         $usuarios = $repo->Pesquisar($_GET['busca']);
+        $usuarios = $repo->Pesquisar( $_GET['busca'] );
     }
     else
     {

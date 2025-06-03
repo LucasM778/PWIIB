@@ -1,3 +1,4 @@
+<?php include "logado.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -48,51 +49,54 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
        <li class="nav-item">
-            <a class="nav-link" href="https://www.globo.com" > Acesse a Globo por aqui </a>
+            <a class="nav-link text-white" href="https://www.globo.com" > Acesse a Globo por aqui </a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             php
           </a>
           <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="professores.php">Professores</a></li>
             <li><a class="dropdown-item" href="if.php">If</a></li>
             <li><a class="dropdown-item" href="while.php">While</a></li>
             <li><a class="dropdown-item" href="for.php">For</a></li>
             <li><a class="dropdown-item" href="switch.php">Switch</a></li>
             <li><a class="dropdown-item" href="array.php">Array/Vetor</a></li>
-            <li><a class="dropdown-item" href="disciplina.php">Disciplina</a></li>
-          
           </ul>
         </li><!--Fim do menu dropdonw -->
         <li class="nav-item">
-            <a class="nav-link" href="instalar.php" > 
+            <a class="nav-link text-white" href="instalar.php" > 
               Instalar o banco 
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="usuarios.php" > 
+            <a class="nav-link text-white" href="usuarios.php" > 
               Usuarios
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="disciplinas.php" > 
-              Disciplinas 
+            <a class="nav-link text-white" href="disciplinas.php" > 
+              Disciplinas
             </a>
         </li>
-
-         <li class="nav-item">
-            <a class="nav-link" href="referencias.php" > 
-              Referencias 
-            </a>
-        </li>
-
       </ul><!--Fim do menu  -->
-     
+<?php
+      if (basename($_SERVER['PHP_SELF']) != 'login.php') {
+        ?>
+        <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                <li class="nav-item text-white">
+                    Bem vindo <?php echo $_SESSION["Nome"]; ?> <a href="logoff.php"> Faça o logoff aqui </a>
+                </li>
+        </ul>
+
+        <?php
+      }
+?>
+
+    
     </div>
   </div>
 </nav>
 <div class="container">
-
-
