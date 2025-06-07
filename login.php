@@ -7,7 +7,7 @@
 
         <div class="card mt-3 ">
 
-            <form class="card-body cardbody-color rounded-3 p-lg-5" method="post" action="/Login/Entrar/">
+           
             <form class="card-body cardbody-color rounded-3 p-lg-5" method="post" action="verificar_login.php">
 
                 <div class="text-center">

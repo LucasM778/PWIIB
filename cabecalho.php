@@ -81,6 +81,14 @@
               Disciplinas
             </a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="referencias.php" > 
+              Referencias
+            </a>
+        </li>
+
+
       </ul><!--Fim do menu  -->
 <?php
       if (basename($_SERVER['PHP_SELF']) != 'login.php') {

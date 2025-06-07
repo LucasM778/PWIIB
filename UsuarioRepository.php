@@ -41,7 +41,7 @@ class UsuarioRepository {
         return $resultado->fetch_assoc();
     }
 
-    public function verificarLogin($login, $senha) {Add commentMore actions
+    public function verificarLogin($login, $senha) {
         $stmt = $this->conexao->prepare(
             "SELECT * FROM usuarios WHERE Login = ? && Senha = ?");
         $stmt->bind_param("ss", $login, $senha);

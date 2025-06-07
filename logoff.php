@@ -1,4 +1,4 @@
-<?php Add commentMore actions
+<?php 
 session_start();
 $_SESSION["Nome"] = "";
 $_SESSION["Id"] = "";
