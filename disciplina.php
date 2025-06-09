@@ -1,39 +1,43 @@
 <?php 
 
-include "cabecalho.php"; 
+    // Inclui o cabeçalho da página (geralmente HTML padrão para topo da página)
+    include "cabecalho.php"; 
+
+    // Inclui o arquivo de conexão com o banco de dados (cria a variável $conexao)
     include "conexao.php";
-    require_once 'referencias_Repository.php';
 
-    //Crio um objeto do tipo referenciasRepository chamado repo
-    //E recebe a conexão como parametro
-    $repo = new referenciasRepository($conexao);
+    // Inclui a definição da classe disciplinaRepository, que lida com banco de dados
+    require_once 'disciplinaRepository.php';
 
+    // Cria um objeto do tipo disciplinaRepository, passando a conexão como parâmetro
+    $repo = new disciplinaRepository($conexao);
+
+    // Verifica se foi feita uma busca via GET e se não está vazia
     if( isset($_GET['busca']) && !empty($_GET['busca']) )
     {
-        $usuarios = $repo->Pesquisar( $_GET['busca'] );
+        // Se sim, chama o método Pesquisar para buscar disciplinas com base no termo
+        $disciplina = $repo->Pesquisar( $_GET['busca'] );
     }
     else
     {
-        //Chamei o metodo BuscarTodos para puxar 
-        // todas referencias do banco de dados
-        $referencias= $repo->buscarTodos();
+        // Caso contrário, busca todas as disciplinas
+        $disciplina = $repo->buscarTodos();
     }
-    
-
 ?>
+
 <div class="row">
     <div class="col-12">
         <br />
         <div class="card">
             <div class="card-header">
-                <b>Lista de referencias</b>
+                <b>Lista de disciplinas</b>
             </div>
             <div class="card-body">
-             <form action="referencias.php" method="get">
+             <form action="disciplina.php" method="get">
                 <div class="row">
                         <div class="col-4">
-                            <a href="nova_referencias.php" class="btn btn-success">
-                            Novo referencias
+                            <a href="nova_disciplina.php" class="btn btn-success">
+                            Nova disciplina
                             </a>
                         </div>
                         <div class="col-4">
@@ -52,7 +56,8 @@ include "cabecalho.php";
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Nome</th>
+                            <th>Disciplina</th>
+                           
                             <th></th>
                         </tr>
                     </thead>
@@ -60,16 +65,17 @@ include "cabecalho.php";
                         <?php
                             //foreach serve para ler todas as disciplinas
                             // vindos do banco em formato de array chave valor
-                            foreach ($referencias as $user) {
+                            foreach ($disciplina as $user) {
                                 echo "<tr>
                                         <td>".$user['ID']."</td>
-                                        <td>".$user['NOME']."</td>
+                                        <td>".$user['DISCIPLINA']."</td>
+                                        
                                       
                                         <td>
                                             <a class='btn btn-danger'
-                                                 href='excluir_referencias.php?id=".$user['ID']."'>Excluir</a>
+                                                 href='excluir_disciplina.php?id=".$user['ID']."'>Excluir</a>
                                             <a class='btn btn-warning'
-                                                 href='editar_referencias.php?id=".$user['ID']."'>Editar</a>
+                                                 href='editar_disciplina.php?id=".$user['ID']."'>Editar</a>
                                         </td> 
                                       </tr>";
                             }

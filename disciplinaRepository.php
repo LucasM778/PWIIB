@@ -1,4 +1,3 @@
-<!--- Tarefa 22/05       ---->
 <?php
 class disciplinaRepository {
     private $conexao;
@@ -8,70 +7,76 @@ class disciplinaRepository {
         $this->conexao = $conexao;
     }
 
-
-
-    public function buscarTodas() {
-
+    public function buscarTodos() {
         $result = $this->conexao->query(
-            "SELECT * FROM disciplinasum");
+            "SELECT * FROM disciplinas");
 
-        $disciplinasum = [];
+        $disciplina = [];
         while ($row = $result->fetch_assoc()) {
-            array_push($disciplinasum, $row);
+            array_push($disciplina, $row);
         }
-        return $disciplinasum;
+        return $disciplina;
     }
 
-
-    public function Pesquisar($busca){
-        $sql ="SELECT * FROM disciplinasum WHERE NOME like '%$busca%'";
+    public function Pesquisar($busca)
+    {
+        $sql = "SELECT * FROM disciplinas WHERE NOME like '%$busca%' ";
         $resultado = $this->conexao->query($sql);
-        $disciplinaum =[];
+        $disciplina = [];
         while ($row = $resultado->fetch_assoc()) {
-            array_push($disciplinaum, $row);
+            array_push($disciplina, $row);
         }
-        return $disciplinaum;
-
-
+        return $disciplina;
     }
    
     public function buscarPorId($id) {
         $stmt = $this->conexao->prepare(
-            "SELECT * FROM disciplinasum WHERE id = ?");
+            "SELECT * FROM disciplinas WHERE id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
 
         $resultado = $stmt->get_result();
         return $resultado->fetch_assoc();
     }
-    public function Inserir($nome, $ativo)
-    {
-        echo $ativo;
-        
-        $sql = "INSERT INTO disciplinasum (NOME, ATIVO) 
-                VALUES (?, ?);";
-                $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("si", $nome,$ativo);
-                $stmt->execute();
+
+    public function verificarLogin($login, $senha) {
+        $stmt = $this->conexao->prepare(
+            "SELECT * FROM disciplinas WHERE Login = ? && Senha = ?");
+        $stmt->bind_param("ss", $login, $senha);
+        $stmt->execute();
+
+        $resultado = $stmt->get_result();
+        return $resultado->fetch_assoc();
     }
 
-    public function Editar($nome, $id, $ativo)
+
+    public function Inserir($disciplina)
     {
     
         
-        $sql = "UPDATE disciplinasum set NOME = ?, ATIVO = ? where ID = ?"; 
+        $sql = "INSERT INTO disciplinas (disciplina) 
+                VALUES (?);";
                 $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("sii", $nome,$ativo,$id);
+                $stmt->bind_param("s", $disciplina);
                 $stmt->execute();
     }
 
-    public function excluirDisciplina($id)
+    public function Editar($DISCIPLINA, $id)
     {
-        $sql = "DELETE FROM disciplinasum where id = ?";
+        $sql = "UPDATE disciplinas set DISCIPLINA = ?  where ID = ?";
+                $stmt = $this->conexao->prepare($sql);
+                $stmt->bind_param("si", $DISCIPLINA,$id);
+                $stmt->execute();
+    }
+
+
+
+    public function excluirdisciplina($id)
+    {
+        $sql = "DELETE FROM disciplinas where id = ?";
         $preparar = $this->conexao->prepare($sql);
         $preparar->bind_param("i",$id);
         $preparar->execute();
     }
 
 }
-

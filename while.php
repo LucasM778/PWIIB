@@ -1,4 +1,6 @@
-<?php include "cabecalho.php"; ?>
+<?php 
+
+include "cabecalho.php"; ?>
 
 <h1>While</h1>
 <p>

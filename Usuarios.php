@@ -1,31 +1,23 @@
-<?php
+<?php 
 
     include "cabecalho.php"; 
     include "conexao.php";
-
-    //Inclui o arquivo da classe Repository do usuário
     require_once 'UsuarioRepository.php';
 
     //Crio um objeto do tipo UsuarioRepository chamado repo
     //E recebe a conexão como parametro
     $repo = new UsuarioRepository($conexao);
 
-
-    if(isset($_GET['busca']) && !empty($_GET['busca']))
+    if( isset($_GET['busca']) && !empty($_GET['busca']) )
     {
-
-        $usuarios = $repo->Pesquisar($_GET['busca']);
         $usuarios = $repo->Pesquisar( $_GET['busca'] );
     }
     else
     {
-            //Chamei o metodo BuscarTodos para puxar 
-            // todos usuarios do banco de dados
-            $usuarios = $repo->buscarTodos();
-
+        //Chamei o metodo BuscarTodos para puxar 
+        // todos usuarios do banco de dados
+        $usuarios = $repo->buscarTodos();
     }
-
-
     
 
 ?>
@@ -37,23 +29,24 @@
                 <b>Lista de usuários</b>
             </div>
             <div class="card-body">
-                <form action="Usuarios.php" method ="get">
-              <div class="row">
-                    <div class="col-4">
-                        <a href="novo_usuario.php" class="btn btn-success">
+             <form action="usuarios.php" method="get">
+                <div class="row">
+                        <div class="col-4">
+                            <a href="novo_usuario.php" class="btn btn-success">
                             Novo usuário
-                        </a>
-                    </div>
-                    <div class="col-4">
-                        <input name="busca" class="form-control" />
-                    </div>
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-primary">
-                            Pesquisar
-                        </button>
-                    </div>
-              </div>
-              </form>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <input name="busca" class="form-control" />
+                        </div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary">
+                                Pesquisar
+                            </button>
+                        </div>
+                </div>
+            </form>   
+
               <div class="row">
                 <table class="table table-striped table-hover">
                     <thead>
@@ -95,5 +88,5 @@
 
 <?php
 
-   
+    include "rodape.php"; 
 ?>

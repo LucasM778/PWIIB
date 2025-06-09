@@ -3,7 +3,7 @@
 <?php echo "<h1> Index do nosso projeto</h1>"; ?>
 
 <button class="btn btn-success" onclick="Piscar(this)" >
-    Piscando botão
+    Piscando meu botão
 </button>
 
 <script>

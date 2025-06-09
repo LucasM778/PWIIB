@@ -9,25 +9,25 @@ $sql = "CREATE TABLE IF NOT EXISTS USUARIOS (
             ATIVO BIT DEFAULT 1
         );";
 $conexao->query($sql); $sql=
-        "CREATE TABLE REFERENCIAS (
+        "CREATE TABLE IF NOT EXISTS  REFERENCIAS (
             ID INT PRIMARY KEY AUTO_INCREMENT,
             NOME VARCHAR(100) NOT NULL
         );"
 ;$conexao->query($sql); $sql=
-        "CREATE TABLE DISCIPLINAS(
+        "CREATE TABLE IF NOT EXISTS DISCIPLINA(
             ID INT PRIMARY KEY AUTO_INCREMENT,
             DISCIPLINA VARCHAR(100)        
         );"
 ;$conexao->query($sql); $sql=
-        "CREATE TABLE PERGUNTAS(
+        "CREATE TABLE IF NOT EXISTS PERGUNTAS(
             ID INT PRIMARY KEY AUTO_INCREMENT,
             PERGUNTA TEXT NOT NULL,
             ID_DISCIPLINA INT,
             CONSTRAINT FK_DISCIPLINA FOREIGN KEY (ID_DISCIPLINA) 
-                REFERENCES DISCIPLINAS(ID)
+                REFERENCES DISCIPLINA(ID)
         );"
 ;$conexao->query($sql); $sql=
-        "CREATE TABLE ALTERNATIVAS(
+        "CREATE TABLE IF NOT EXISTS ALTERNATIVAS(
             ID INT PRIMARY KEY AUTO_INCREMENT,
             ID_PERGUNTA INT,
             CORRETA BIT,
@@ -36,7 +36,7 @@ $conexao->query($sql); $sql=
                 REFERENCES PERGUNTAS(ID)
         );"
 ;$conexao->query($sql); $sql=
-        "CREATE TABLE REF_PERGUNTAS(
+        "CREATE TABLE IF NOT EXISTS REF_PERGUNTAS(
             ID INT PRIMARY KEY AUTO_INCREMENT,
             ID_PERGUNTA INT,
             ID_REF INT,
@@ -44,14 +44,6 @@ $conexao->query($sql); $sql=
             CONSTRAINT FK_REF FOREIGN KEY (ID_REF) REFERENCES REFERENCIAS(ID)
         );";
 
-        ///////TAREFA 22/05///////
-$sql = "CREATE TABLE IF NOT EXISTS DISCIPLINASUM (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
-    NOME VARCHAR(50) NOT NULL,
-    ATIVO BIT DEFAULT 1
-);"
-;
-//////FIM DA TAREFA //////
 
 if ($conexao->query($sql)) {
     echo "Tabela criada com sucesso.<br>";
@@ -77,19 +69,6 @@ $sql_insert = "INSERT INTO USUARIOS (LOGIN, SENHA) VALUES
     ('VITORIA FERNANDA FERRARI DA SILVA', '123senha'),
     ('YURI RAFAEL DA SILVA SANTO', '123senha')
     ;";
-    
-    $sql_insert = "INSERT INTO DISCIPLINASUM (NOME) VALUES
-    ('PWII'),('BANCO DE DADOS'),('PTCC'),('AULA');";
-
-   $sql_insert = "INSERT INTO REFERENCIAS (NOME) VALUES 
-   ('MATEMATICA'), ('GEOGRAFIA');";
-      
-
-
-  ///////TAREFA 22/05///////
-
-//////FIM DA TAREFA //////
-
 
 
 // Executando a inserção
