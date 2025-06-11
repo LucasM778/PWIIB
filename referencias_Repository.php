@@ -20,9 +20,9 @@ class referenciasRepository {
 
     public function Pesquisar($busca)
     {
-        $sql = "SELECT * FROM referencias WHERE LOGIN like '%$busca%' ";
+        $sql = "SELECT * FROM referencias WHERE NOME like '%$busca%' ";
         $resultado = $this->conexao->query($sql);
-        $disciplina = [];
+        $referencias = [];
         while ($row = $resultado->fetch_assoc()) {
             array_push($referencias, $row);
         }

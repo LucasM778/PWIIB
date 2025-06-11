@@ -20,7 +20,7 @@ class disciplinaRepository {
 
     public function Pesquisar($busca)
     {
-        $sql = "SELECT * FROM disciplinas WHERE NOME like '%$busca%' ";
+        $sql = "SELECT * FROM disciplinas WHERE DISCIPLINA like '%$busca%' ";
         $resultado = $this->conexao->query($sql);
         $disciplina = [];
         while ($row = $resultado->fetch_assoc()) {

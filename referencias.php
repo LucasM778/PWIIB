@@ -10,7 +10,7 @@ include "cabecalho.php";
 
     if( isset($_GET['busca']) && !empty($_GET['busca']) )
     {
-        $usuarios = $repo->Pesquisar( $_GET['busca'] );
+        $referencias = $repo->Pesquisar( $_GET['busca'] );
     }
     else
     {
