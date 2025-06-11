@@ -1,5 +1,6 @@
+<?php
 include "conexao.php";
-require_once "repository/PerguntaRepository.php";
+require_once "PerguntaRepository.php";
 $repo = new PerguntaRepository($conexao);
 
 

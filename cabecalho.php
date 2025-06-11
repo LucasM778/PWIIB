@@ -89,6 +89,13 @@
         </li>
 
 
+         <li class="nav-item">
+            <a class="nav-link text-white" href="perguntas.php" > 
+              Perguntas
+            </a>
+        </li>
+
+
 
       </ul><!--Fim do menu  -->
 <?php

@@ -17,7 +17,7 @@
             <label>Disciplina</label>
             <select name="id_disciplina" class="form-control" >
                 <?php
-                    require_once 'repository/DisciplinaRepository.php';
+                    require_once 'DisciplinaRepository.php';
                     $repo = new DisciplinaRepository($conexao);
 
                     foreach ($repo->buscarTodos() as $item  ) {

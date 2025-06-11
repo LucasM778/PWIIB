@@ -1,8 +1,8 @@
 <?php
     include "cabecalho.php"; 
     include "conexao.php";
-    require_once 'repository/DisciplinaRepository.php';
-    require_once 'repository/PerguntaRepository.php';
+    require_once 'DisciplinaRepository.php';
+    require_once 'PerguntaRepository.php';
 
     //Crio um objeto do tipo DisciplinaRepository chamado repo
     //E recebe a conexão como parametro
