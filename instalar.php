@@ -14,7 +14,7 @@ $conexao->query($sql); $sql=
             NOME VARCHAR(100) NOT NULL
         );"
 ;$conexao->query($sql); $sql=
-        "CREATE TABLE IF NOT EXISTS DISCIPLINA(
+        "CREATE TABLE IF NOT EXISTS DISCIPLINAS(
             ID INT PRIMARY KEY AUTO_INCREMENT,
             DISCIPLINA VARCHAR(100)        
         );"
