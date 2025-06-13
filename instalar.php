@@ -24,7 +24,7 @@ $conexao->query($sql); $sql=
             PERGUNTA TEXT NOT NULL,
             ID_DISCIPLINA INT,
             CONSTRAINT FK_DISCIPLINA FOREIGN KEY (ID_DISCIPLINA) 
-                REFERENCES DISCIPLINA(ID)
+                REFERENCES DISCIPLINAS(ID)
         );"
 ;$conexao->query($sql); $sql=
         "CREATE TABLE IF NOT EXISTS ALTERNATIVAS(

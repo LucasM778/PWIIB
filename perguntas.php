@@ -84,7 +84,7 @@
                                             <td>
                                                 <!-- Botões de ação para a pergunta -->
                                                 <a class='btn btn-primary'
-                                                     href='perguntas.php?id=".$row['ID']."'>Alternativas</a>
+                                                     href='alternativa.php?id=".$row['ID']."'>Alternativas</a>
                                                 <a class='btn btn-danger'
                                                      href='pergunta_excluir.php?id=".$row['ID']."'>Excluir</a>
                                                 <a class='btn btn-warning'
