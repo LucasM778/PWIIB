@@ -73,7 +73,7 @@
 
                                               
                                             <a class='btn btn-primary'
-                                                     href='alternativa.php?id=".$row['ID']."'>Alternativas</a>
+                                                     href='alternativa.php?id=".$row['ID']."'>Salvar</a>
 
                         </tbody>
 

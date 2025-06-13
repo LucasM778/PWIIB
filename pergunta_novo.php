@@ -24,7 +24,18 @@
                         echo "<option value='$item[ID]'> $item[DISCIPLINA] </option>";
                     }
                 ?>
-            </select>
+            </select><br>
+
+            <label>Alternativas</label>
+            <br><br>
+                    <input type="text" name="alternativa1" class="form-control" placeholder="Alternativa 1" id="A1">
+                    <br>
+                    <input type="text" name="alternativa2" class="form-control" placeholder="Alternativa 2" id="A2">
+                    <br>
+                    <input type="text" name="alternativa3" class="form-control" placeholder="Alternativa 3" id="A3">
+                    <br>
+
+                
             <br>
             <button name="salvar_pergunta" type="submit" class="btn btn-primary">
                 Salvar
