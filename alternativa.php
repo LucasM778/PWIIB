@@ -12,13 +12,13 @@
     $repoAlt = new AlternativaRepository($conexao);
 
 
-      if( isset($_GET['busca']) && !empty($_GET['busca']) )
+      if( isset($_GET['id']) && !empty($_GET['id']) )
     {
-        $obj = $repo->Pesquisar( $_GET['busca'] );
+        $obj = $repo->buscarPorId( $_GET['id'] );
     }
     else
     {
-        $obj = $repo->buscarTodos();
+       header('location: perguntas.php');
     }
 
 ?>
@@ -35,18 +35,12 @@
 
                  <tbody>
                             <?php
-                                // Percorre cada pergunta retornada e exibe na tabela
-                                foreach ($obj as $row) {
-                                    echo
-                                       "<tr>
-                                            <td>".$row['ID']."</td>
-                                            <td>".$row['PERGUNTA']."</td>
-                                            <td>".$row['ID_DISCIPLINA']."</td>
-                                            <td>
+                               
+                                
+                                echo $obj ['ID']; 
+                                echo " . ";
+                                echo $obj ['PERGUNTA'];
 
-                                        </tr>";
-                                        
-                                }
                             ?>            
                                         <div class="check">
                                        <div class="form-check">
