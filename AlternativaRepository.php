@@ -11,11 +11,11 @@ class AlternativaRepository {
         $result = $this->conexao->query(
             "SELECT * FROM ALTERNATIVAS");
 
-        $disciplina = [];
+        $alternativas = [];
         while ($row = $result->fetch_assoc()) {
-            array_push($disciplina, $row);
+            array_push($alternativas, $row);
         }
-        return $disciplina;
+        return $alternativas;
     }
 
     public function buscaPergunta($idPergunta)

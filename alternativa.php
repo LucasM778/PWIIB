@@ -15,6 +15,7 @@
       if( isset($_GET['id']) && !empty($_GET['id']) )
     {
         $obj = $repo->buscarPorId( $_GET['id'] );
+        $alternativas = $repoAlt->buscarTodos();
     }
     else
     {
@@ -41,12 +42,34 @@
                                 echo " . ";
                                 echo $obj ['PERGUNTA'];
 
-                            ?>            
-                                        <div class="check">
+                       
+                            
+                            //foreach serve para ler todas as disciplinas
+                            // vindos do banco em formato de array chave valor
+                            foreach ($alternativas as $user) {
+                                echo "<tr>
+                                          <td>".$user['ID']."</td>
+                                        <td>".$user['ID_PERGUNTA']."</td>
+                                        <td>".$user['ALTERNATIVA']."</td>
+
+                                        
+                                       
+                                        
+                                      
+                                    
+                                      </tr>";
+                            }
+                        ?>
+
+
+                
+
+                            
+                                <!--   <div class="check">
                                        <div class="form-check">
                                             <input class="form-check-input" type="radio" name="Altenativa" id="A1">
                                             <label class="form-check-label" for="flexRadioDefault1">
-                                                 alternativa 1
+                                              alternativa 1
                                             </label><br>
                                             </div>
                                                <div class="form-check">
@@ -63,8 +86,8 @@
                                             </div>
                                             </div>
                                             <br>
-
-
+                                -->
+                        
                                               
                                             <a class='btn btn-primary'
                                                      href='alternativa.php?id=".$row['ID']."'>Salvar</a>
