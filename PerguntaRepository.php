@@ -44,6 +44,7 @@ class PerguntaRepository {
                 $stmt = $this->conexao->prepare($sql);
                 $stmt->bind_param("si", $PERGUNTA, $ID_DISCIPLINA);
                 $stmt->execute();
+                return $this->conexao->insert_id;
                
     }
 

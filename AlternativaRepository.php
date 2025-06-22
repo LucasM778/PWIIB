@@ -20,7 +20,7 @@ class AlternativaRepository {
 
     public function buscaPergunta($idPergunta)
     {
-        $sql = "SELECT * FROM  ALTERNATIVAS WHERE ID_ PERGUNTA = ? ";
+        $sql = "SELECT * FROM  ALTERNATIVAS WHERE ID_PERGUNTA = ? ";
         $stmt = $this->conexao->prepare($sql);
         $stmt->bind_param("i", $idPergunta);
         $stmt->execute();
@@ -55,16 +55,18 @@ class AlternativaRepository {
     }
 
 
-    public function Inserir($alternativa)
-    {
-    
-        
-        $sql = "INSERT INTO ALTERNATIVAS (alternativa) 
-                VALUES (?);";
-                $stmt = $this->conexao->prepare($sql);
-                $stmt->bind_param("s", $alternativa);
-                $stmt->execute();
+   public function Inserir($id_pergunta, $alt1, $alt2, $alt3, $correta) {
+    $alternativas = [$alt1, $alt2, $alt3];
+
+    for ($i = 0; $i < 3; $i++) {
+        $eh_correta = ($correta == ($i + 1)) ? 1 : 0;
+
+        $sql = "INSERT INTO alternativas (ID_PERGUNTA, ALTERNATIVA, CORRETA) VALUES (?, ?, ?)";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bind_param("isi", $id_pergunta, $alternativas[$i], $eh_correta);
+        $stmt->execute();
     }
+}
 
     public function Editar($alternativa, $id)
     {
