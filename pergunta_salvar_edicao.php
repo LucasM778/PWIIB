@@ -1,27 +1,40 @@
 <?php
-
-
-// Inclui o arquivo que estabelece a conexão com o banco de dados (normalmente cria a variável $conexao)
 include "conexao.php";
-
-// Importa a classe PerguntaRepository, que contém métodos para manipular dados de perguntas no banco
 require_once "PerguntaRepository.php";
+require_once "AlternativaRepository.php";
 
-// Cria uma instância da classe PerguntaRepository, passando a conexão com o banco como argumento
-$repo = new perguntaRepository($conexao);
+$repoPergunta = new PerguntaRepository($conexao);
+$repoAlt = new AlternativaRepository($conexao);
 
-// Verifica se os campos 'ID', 'NOME' e 'ID_DISCIPLINA' foram enviados via método POST (validação básica do formulário)
-if (isset($_POST["ID"]) && isset($_POST['NOME']) && isset($_POST['ID_DISCIPLINA'])) {
 
-    // Chama o método Editar da classe PerguntaRepository, passando os dados do formulário
+if (isset($_POST["ID"]) && isset($_POST['NOME']) && isset($_POST['ID_DISCIPLINA']) && isset($_POST['correta'])) {
+    
+    $id_pergunta = $_POST['ID'];
+    $nome_pergunta = $_POST['NOME'];
+    $id_disciplina = $_POST['ID_DISCIPLINA'];
+    $correta = $_POST['correta'];  
 
-    $repo->Editar($_POST['NOME'],$_POST['ID_DISCIPLINA'], $_POST['ID']);
+   
+    $repoPergunta->Editar($nome_pergunta, $id_disciplina, $id_pergunta);
 
-    // Redireciona o usuário de volta para a página de listagem de perguntas após editar
-    header('location: perguntas.php');
+    
+    for ($i = 1; $i <= 3; $i++) {
+        if (isset($_POST["alt_id_$i"]) && isset($_POST["alt_$i"])) {
+            $id_alt = $_POST["alt_id_$i"];
+            $alt_esc = $_POST["alt_$i"];
+            $eh_correta = ($correta == $i) ? 1 : 0;
+
+            
+            $sql = "UPDATE alternativas SET ALTERNATIVA = ?, CORRETA = ? WHERE ID = ?";
+            $stmt = $conexao->prepare($sql);
+            $stmt->bind_param("sii", $alt_esc, $eh_correta, $id_alt);
+            $stmt->execute();
+        }
+    }
+
+    header('location: perguntas.php?sucesso=Pergunta e alternativas atualizadas');
 } else {
-    // Se algum campo estiver faltando, redireciona para a mesma página (poderia ser melhor tratada com uma mensagem de erro)
-    header('location: perguntas.php');
+    header('location: perguntas.php?erro=Formulário incompleto');
 }
 
 ?>

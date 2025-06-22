@@ -1,20 +1,23 @@
 <?php
 include "conexao.php";
 require_once "PerguntaRepository.php";
-$repo = new perguntaRepository($conexao);
+require_once "AlternativaRepository.php";
 
-if( isset($_GET["id"]) && !empty($_GET["id"]) )
-{
+$repo = new PerguntaRepository($conexao);
+$repoAlt = new AlternativaRepository($conexao);
+
+if (isset($_GET["id"]) && !empty($_GET["id"])) {
     $referencias = $repo->buscarPorId($_GET["id"]);
-    if($referencias != null)
-    {
+
+    if ($referencias != null) {
+       
+        $repoAlt->excluirPorPergunta($_GET["id"]);
+
         $repo->Excluir($_GET["id"]);
     }
-    header('location: perguntas.php');
-}
-else
-{
-    header('location: perguntas.php');
-}
 
+    header('location: perguntas.php?sucesso=Pergunta e alternativas excluídas');
+} else {
+    header('location: perguntas.php?erro=ID inválido');
+}
 ?>

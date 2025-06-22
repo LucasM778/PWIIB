@@ -78,12 +78,12 @@ class AlternativaRepository {
 
 
 
-    public function excluiralternativa($id)
-    {
-        $sql = "DELETE FROM ALTERNATIVAS where id = ?";
-        $preparar = $this->conexao->prepare($sql);
-        $preparar->bind_param("i",$id);
-        $preparar->execute();
-    }
+   public function excluirPorPergunta($id_pergunta) {
+    $sql = "DELETE FROM ALTERNATIVAS WHERE ID_PERGUNTA = ?";
+    $stmt = $this->conexao->prepare($sql);
+    $stmt->bind_param("i", $id_pergunta);
+    $stmt->execute();
+}
+
 
 }
